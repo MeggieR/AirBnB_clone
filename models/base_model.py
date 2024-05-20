@@ -1,5 +1,6 @@
 import uuid
 from datetime import datetime
+import models
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -19,9 +20,12 @@ class BaseModel:
         """Returns string representation of the object"""
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
+    models.storage.new(self)
+
     def save(self):
         """Updates the updated_at attribute with the current datetime"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Returns a dictionary containing all keys/values of __dict__ of the instance"""

@@ -8,7 +8,7 @@ class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class defines a command-line interpreter for the HBNB project.
     """
-    prompt = "(hbnb) "
+    prompt = "(hbnb)"
 
     def do_quit(self, arg):
         """

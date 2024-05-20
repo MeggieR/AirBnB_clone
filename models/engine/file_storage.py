@@ -37,5 +37,5 @@ class FileStorage:
                         cls = eval(class_name)  # Assuming classes are defined in the same module
                         instance = cls(**value)
                         FileStorage.__objects[key] = instance
-            except Exception as e:
-                print(f"An error occurred: {e}")
+            except Exception:
+                pass
